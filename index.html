@@ -1,258 +1,330 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fa" dir="rtl">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Your Professional Resume</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <title>محمدعلی فتحی | برنامه‌نویس و تحلیلگر داده</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --bg-color: #121212;
+      --accent-color: #ff6f00;
+      --highlight-color: #00bcd4;
+      --glass-bg: rgba(255, 255, 255, 0.05);
+      --glass-border: rgba(255, 255, 255, 0.15);
+    }
+
     body {
-      font-family: 'Arial', sans-serif;
-      background: linear-gradient(to right, #ff7e5f, #feb47b);
-      color: #333;
       margin: 0;
-      padding: 0;
+      font-family: 'Vazirmatn', sans-serif;
+      background: linear-gradient(135deg, #1c1c1c, #2a2a2a);
+      color: #ffffff;
+      scroll-behavior: smooth;
     }
 
     header {
-      background-color: transparent;
-      padding: 40px 0;
-      color: white;
       text-align: center;
+      padding: 3rem 2rem 2rem;
+      background: var(--glass-bg);
+      border-bottom: 1px solid var(--glass-border);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    }
+
+    .profile-pic {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      background-image: url('https://biaupload.com/do.php?imgf=org-de51e58cad852.jpg');
+      background-size: cover;
+      background-position: center;
+      margin: 0 auto 1rem;
+      border: 4px solid var(--accent-color);
+      box-shadow: 0 0 25px rgba(255,111,0,0.6);
+      animation: bounceIn 1.2s ease;
+    }
+
+    @keyframes bounceIn {
+      0% { transform: scale(0.5); opacity: 0; }
+      60% { transform: scale(1.2); opacity: 1; }
+      100% { transform: scale(1); }
     }
 
     header h1 {
-      font-size: 3.5rem;
-      font-weight: bold;
-      margin-bottom: 0.5rem;
-      animation: fadeIn 2s ease-out;
-    }
-
-    header p {
-      font-size: 1.5rem;
-      animation: fadeIn 3s ease-out;
-    }
-
-    .photo-section {
-      display: flex;
-      justify-content: center;
-      margin-top: 30px;
-    }
-
-    .photo-section img {
-      border-radius: 50%;
-      width: 220px;
-      height: 220px;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-      transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
-    }
-
-    .photo-section img:hover {
-      transform: scale(1.1);
-      box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
-    }
-
-    .section {
-      margin: 50px 0;
-      padding: 30px;
-      background-color: white;
-      border-radius: 10px;
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-      animation: slideIn 1s ease-in-out;
-    }
-
-    .section h2 {
-      color: #ff6347;
-      font-size: 2.5rem;
-      margin-bottom: 20px;
-      position: relative;
-    }
-
-    .section h2::after {
-      content: '';
-      position: absolute;
-      width: 60px;
-      height: 5px;
-      background-color: #ff6347;
-      bottom: -10px;
-      left: 0;
-    }
-
-    .card {
-      border: none;
-      border-radius: 10px;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s ease;
-    }
-
-    .card:hover {
-      transform: scale(1.05);
-    }
-
-    .card-body {
-      background-color: #f8f9fa;
-    }
-
-    .card-title {
-      font-size: 1.5rem;
-      color: #333;
-    }
-
-    .card-text {
-      font-size: 1.1rem;
-      color: #666;
-    }
-
-    .contact-info {
-      display: flex;
-      justify-content: center;
-      margin-top: 30px;
-      transition: transform 0.5s ease;
-    }
-
-    .contact-info a {
       font-size: 2rem;
-      margin: 0 25px;
-      color: #ff6347;
-      transition: color 0.3s ease, transform 0.3s ease;
-    }
-
-    .contact-info a:hover {
-      color: #e74c3c;
-      transform: scale(1.2);
-    }
-
-    footer {
-      text-align: center;
-      background-color: #2c3e50;
-      color: white;
-      padding: 20px 0;
-      position: relative;
-      margin-top: 50px;
-    }
-
-    footer::before {
-      content: '';
-      position: absolute;
-      top: -20px;
-      left: 0;
-      width: 100%;
-      height: 10px;
-      background-color: #ff6347;
+      background: linear-gradient(90deg, var(--accent-color), var(--highlight-color));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight: bold;
+      animation: fadeIn 1.5s ease;
     }
 
     @keyframes fadeIn {
-      0% { opacity: 0; }
-      100% { opacity: 1; }
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
-    @keyframes slideIn {
-      0% { transform: translateX(-100%); }
-      100% { transform: translateX(0); }
+    section {
+      padding: 3rem 2rem;
+      border-bottom: 1px solid var(--glass-border);
+    }
+
+    section h2 {
+      color: var(--highlight-color);
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
+    }
+
+    ul li {
+      margin-bottom: 0.6rem;
+    }
+
+    .portfolio-icons,
+    .contact-icons {
+      text-align: center;
+      margin-top: 1rem;
+    }
+
+    .portfolio-icons a,
+    .contact-icons a {
+      font-size: 2rem;
+      margin: 0 0.7rem;
+      color: var(--accent-color);
+      transition: transform 0.4s ease, color 0.4s ease;
+    }
+
+    .portfolio-icons a:hover,
+    .contact-icons a:hover {
+      transform: scale(1.2);
+      color: var(--highlight-color);
+    }
+
+    .skills-grid {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .skill {
+      margin: 1rem 0;
+    }
+
+    .skill-label {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 0.4rem;
+    }
+
+    .skill-bar {
+      width: 100%;
+      height: 12px;
+      background: #333;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .skill-bar-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--accent-color), var(--highlight-color));
+      width: 0%;
+      border-radius: 10px;
+      transition: width 2s ease-in-out;
+    }
+
+    .interests {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .interest-card {
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: 12px;
+      padding: 1.5rem;
+      width: 160px;
+      text-align: center;
+      transition: transform 0.4s ease;
+    }
+
+    .interest-card i {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+      color: var(--accent-color);
+    }
+
+    .interest-card:hover {
+      transform: scale(1.1);
+      border-color: var(--highlight-color);
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>MohammadAli-Fathi</h1>
-    <p>Full Stack Developer | Data Analyst | Musician</p>
+    <div class="profile-pic"></div>
+    <h1>محمدعلی فتحی | برنامه‌نویس، تحلیلگر داده و متخصص هوش مصنوعی</h1>
   </header>
 
-  <div class="photo-section">
-    <img src="https://biaupload.com/do.php?imgf=org-de51e58cad852.jpg" alt="Your Photo">
-  </div>
+  <section id="about">
+    <h2>درباره من</h2>
+    <p>
+      من محمدعلی فتحی هستم؛ برنامه‌نویس و تحلیلگر داده با تخصص در Python، Django، و ابزارهای مدرن تحلیل داده و هوش مصنوعی.
+      همچنین تجربه قابل‌توجهی در تولید محتوای ویدیویی حرفه‌ای، آموزش موسیقی و مدیریت شبکه‌های اجتماعی دارم.
+    </p>
+  </section>
 
-  <div class="container">
-    <div class="section">
-      <h2>About Me</h2>
-      <p>
-        Mohammad Ali Fathi
-Data Analyst | Statistician | Web Application Developer
+  <section id="resume">
+    <h2>رزومه</h2>
+    <ul>
+      <li>کارشناس آمار از دانشگاه تهران</li>
+      <li>برنامه‌نویس Python و Django (بیش از ۳ سال تجربه)</li>
+      <li>تحلیل‌گر داده با پکیج‌های Numpy, Pandas, Scipy</li>
+      <li>ساخت و مدیریت ربات‌های تلگرام با PBT</li>
+      <li>تجربه کاری در PDN و آینوتی به عنوان کارشناس داده و مشاور فروش</li>
+    </ul>
+  </section>
 
-I am a statistician with a strong academic background, holding a degree in Statistics from the University of Tehran. With extensive experience in data analysis, I specialize in leveraging statistical tools and programming to extract insights from complex datasets.
+  <section id="services">
+    <h2>خدمات من</h2>
+    <ul>
+      <li>برنامه‌نویسی و توسعه وب با Django</li>
+      <li>تحلیل و مصورسازی داده</li>
+      <li>ساخت ربات‌های تلگرامی هوشمند</li>
+      <li>تولید و ادیت ویدیویی حرفه‌ای</li>
+      <li>آموزش موسیقی (گیتار و پیانو)</li>
+      <li>ادمینی شبکه‌های اجتماعی و بهینه‌سازی محتوا (SEO)</li>
+    </ul>
+  </section>
 
-In addition to my analytical expertise, I am skilled in web application development, particularly using Python and the Django framework. My work reflects a combination of technical proficiency and problem-solving abilities, enabling me to design and implement efficient and scalable solutions.
-
-My passion for data-driven decision-making and web development allows me to contribute to innovative projects that bridge the gap between statistical modeling and practical applications.
-
-
-      </p>
-    </div>
-
-    <div class="section">
-      <h2>Skills</h2>
-      <div class="row">
-        <div class="col-md-4">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Web Development</h5>
-              <p class="card-text">Proficient in HTML, CSS,Python,Django,Flutter</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Data Analysis</h5>
-              <p class="card-text">Skilled in Python, R, Excel, and SQL for data manipulation and analysis.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Music</h5>
-              <p class="card-text">Experienced in guitar and piano, with a good voice for singing.</p>
-            </div>
-          </div>
-        </div>
+  <section id="skills">
+    <h2>Skills & Certificates</h2>
+    <div class="skills-grid">
+      <div class="skill">
+        <div class="skill-label"><span>Python</span><span>90%</span></div>
+        <div class="skill-bar"><div class="skill-bar-fill" style="width:90%"></div></div>
+      </div>
+      <div class="skill">
+        <div class="skill-label"><span>Django</span><span>85%</span></div>
+        <div class="skill-bar"><div class="skill-bar-fill" style="width:85%"></div></div>
+      </div>
+      <div class="skill">
+        <div class="skill-label"><span>SQL & Databases</span><span>70%</span></div>
+        <div class="skill-bar"><div class="skill-bar-fill" style="width:70%"></div></div>
+      </div>
+      <div class="skill">
+        <div class="skill-label"><span>Data Analysis</span><span>75%</span></div>
+        <div class="skill-bar"><div class="skill-bar-fill" style="width:75%"></div></div>
+      </div>
+      <div class="skill">
+        <div class="skill-label"><span>Telegram Bots</span><span>65%</span></div>
+        <div class="skill-bar"><div class="skill-bar-fill" style="width:65%"></div></div>
+      </div>
+      <div class="skill">
+        <div class="skill-label"><span>Flutter</span><span>60%</span></div>
+        <div class="skill-bar"><div class="skill-bar-fill" style="width:60%"></div></div>
+      </div>
+      <div class="skill">
+        <div class="skill-label"><span>JavaScript & Web</span><span>60%</span></div>
+        <div class="skill-bar"><div class="skill-bar-fill" style="width:60%"></div></div>
+      </div>
+      <div class="skill">
+        <div class="skill-label"><span>Video Editing</span><span>75%</span></div>
+        <div class="skill-bar"><div class="skill-bar-fill" style="width:75%"></div></div>
+      </div>
+      <div class="skill">
+        <div class="skill-label"><span>Social Media & SEO</span></div>
+        <div class="skill-bar"><div class="skill-bar-fill" style="width:80%"></div></div>
+      </div>
+      <div class="skill">
+        <div class="skill-label"><span>Advanced English Certificate</span></div>
+        <div class="skill-bar"><div class="skill-bar-fill" style="width:100%"></div></div>
+      </div>
+      <div class="skill">
+        <div class="skill-label"><span>International Python Certificate</span></div>
+        <div class="skill-bar"><div class="skill-bar-fill" style="width:100%"></div></div>
       </div>
     </div>
+  </section>
 
-    <div class="section">
-      <h2>Experience</h2>
-      <P>
-        Freelance Software Developer | AI Enthusiast | SEO Specialist
-
-For the past four years, I have been working as a freelance developer, focusing on personal and open-source projects in web and system programming using Python. My expertise extends to artificial intelligence, where I have hands-on experience with Python's AI-related libraries and frameworks.
-
-Additionally, I have been involved in analyzing and optimizing YouTube channels and Instagram pages, leveraging data-driven strategies to improve their SEO performance and engagement.
-
-This blend of technical proficiency in software development and strategic insight into digital platforms enables me to deliver innovative solutions tailored to the needs of diverse projects.
-      </P>
+  <section id="interests">
+    <h2>علایق و اوقات فراغت</h2>
+    <div class="interests">
+      <div class="interest-card">
+        <i class="fas fa-guitar"></i>
+        <div>نوازندگی گیتار</div>
+      </div>
+      <div class="interest-card">
+        <i class="fas fa-music"></i>
+        <div>نوازندگی پیانو</div>
+      </div>
+      <div class="interest-card">
+        <i class="fas fa-swimmer"></i>
+        <div>شنا</div>
+      </div>
+      <div class="interest-card">
+        <i class="fab fa-youtube"></i>
+        <div>تولید محتوا در یوتیوب</div>
+      </div>
+      <div class="interest-card">
+        <i class="fas fa-brain"></i>
+        <div>هوش مصنوعی</div>
+      </div>
     </div>
+  </section>
 
-    <div class="section">
-      <h2>Education</h2>
-      <p>Bachelor's degree in Computer Science from [University Name].</p>
+  <section id="portfolio">
+  <h2>نمونه‌کارها</h2>
+  <div class="interests">
+    <div class="interest-card">
+      <a href="https://www.youtube.com/@biabepors" target="_blank" title="BiaBePors">
+        <i class="fab fa-youtube"></i>
+        <div><strong>BiaBePors</strong></div>
+        <div>آموزش برنامه‌نویسی، نرم‌افزارهای ادیت، تحلیل بازارهای مالی</div>
+      </a>
+    </div>
+    <div class="interest-card">
+      <a href="https://www.youtube.com/@station_chy" target="_blank" title="Station CHY">
+        <i class="fab fa-youtube"></i>
+        <div><strong>Station CHY</strong></div>
+        <div>مدیریت کانال، گویندگی، ادیت ویدیو</div>
+      </a>
+    </div>
+    <div class="interest-card">
+      <a href="https://www.youtube.com/@ma.mehrpoor" target="_blank" title="Mehrpoor Music">
+        <i class="fab fa-youtube"></i>
+        <div><strong>Mehrpoor Music</strong></div>
+        <div>آموزش موسیقی و تحلیل موزیک</div>
+      </a>
+      <a href="https://www.instagram.com/ma.mehrpoor" target="_blank" title="Instagram">
+        <i class="fab fa-instagram"></i>
+      </a>
     </div>
   </div>
+</section>
 
-  <div class="contact-info">
-    <a href="mailto:mohammad.work0076@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a>
-    <a href="https://www.linkedin.com/in/mohammadali-fathi-406ab6306/" target="_blank"><i class="fab fa-linkedin"></i></a>
-    <a href="https://github.com/mohammad00ali76" target="_blank"><i class="fab fa-github"></i></a>
+  <section id="contact">
+  <h2>تماس با من</h2>
+  <div class="contact-icons">
+    <a href="mailto:mohammad.work0076@gmail.com" title="ایمیل"><i class="fas fa-envelope"></i></a>
+    <a href="https://www.linkedin.com/in/mohammadali-fathi-406ab6306/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+    <a href="https://github.com/mohammadali008" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
   </div>
+</section>
 
-  <footer>
-    <p>&copy; 2024 mohammadali. All rights reserved.</p>
-  </footer>
-
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
   <script>
-    // Smooth scroll for anchor links
-    $('a').on('click', function(event) {
-      if (this.hash !== '') {
-        event.preventDefault();
-        const hash = this.hash;
-        $('html, body').animate({
-          scrollTop: $(hash).offset().top
-        }, 800, function() {
-          window.location.hash = hash;
-        });
-      }
+    document.querySelectorAll('section').forEach(section => {
+      section.style.opacity = 0;
+      section.style.transform = 'translateY(50px)';
+      window.addEventListener('scroll', () => {
+        const top = section.getBoundingClientRect().top;
+        if (top < window.innerHeight - 100) {
+          section.style.transition = 'all 0.8s ease';
+          section.style.opacity = 1;
+          section.style.transform = 'translateY(0)';
+        }
+      });
     });
   </script>
 </body>

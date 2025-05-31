@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="fa">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>محمدعلی فتحی | برنامه‌نویس و تحلیلگر داده</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<style>
+    :root {
+      --bg-color: #121212;
+      --accent-color: #ff6f00;
+      --highlight-color: #00bcd4;
+      --glass-bg: rgba(255, 255, 255, 0.05);
+      --glass-border: rgba(255, 255, 255, 0.15);
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Vazirmatn', sans-serif;
+      background: linear-gradient(135deg, #1c1c1c, #2a2a2a);
+      color: #ffffff;
+      scroll-behavior: smooth;
+    }
+
+    header {
+      text-align: center;
+      padding: 3rem 2rem 2rem;
+      background: var(--glass-bg);
+      border-bottom: 1px solid var(--glass-border);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    }
+
+    .profile-pic {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      background-image: url('https://s6.uupload.ir/files/insta-profile_m7w.png');
+      background-size: cover;
+      background-position: center;
+      margin: 0 auto 1rem;
+      border: 4px solid var(--accent-color);
+      box-shadow: 0 0 25px rgba(255,111,0,0.6);
+      animation: bounceIn 1.2s ease;
+    }
+
+    @keyframes bounceIn {
+      0% { transform: scale(0.5); opacity: 0; }
+      60% { transform: scale(1.2); opacity: 1; }
+      100% { transform: scale(1); }
+    }
+
+    header h1 {
+      font-size: 2rem;
+      background: linear-gradient(90deg, var(--accent-color), var(--highlight-color));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight: bold;
+      animation: fadeIn 1.5s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    section {
+      padding: 3rem 2rem;
+      border-bottom: 1px solid var(--glass-border);
+    }
+
+    section h2 {
+      color: var(--highlight-color);
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
+    }
+
+    ul li {
+      margin-bottom: 0.6rem;
+    }
+
+    .portfolio-icons,
+    .contact-icons {
+      text-align: center;
+      margin-top: 1rem;
+    }
+
+    .portfolio-icons a,
+    .contact-icons a {
+      font-size: 2rem;
+      margin: 0 0.7rem;
+      color: var(--accent-color);
+      transition: transform 0.4s ease, color 0.4s ease;
+    }
+
+    .portfolio-icons a:hover,
+    .contact-icons a:hover {
+      transform: scale(1.2);
+      color: var(--highlight-color);
+    }
+
+    .skills-grid {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .skill {
+      margin: 1rem 0;
+    }
+
+    .skill-label {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 0.4rem;
+    }
+
+    .skill-bar {
+      width: 100%;
+      height: 12px;
+      background: #333;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .skill-bar-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--accent-color), var(--highlight-color));
+      width: 0%;
+      border-radius: 10px;
+      transition: width 2s ease-in-out;
+    }
+
+    .interests {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .interest-card {
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: 12px;
+      padding: 1.5rem;
+      width: 160px;
+      text-align: center;
+      transition: transform 0.4s ease;
+    }
+
+    .interest-card i {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+      color: var(--accent-color);
+    }
+
+    .interest-card:hover {
+      transform: scale(1.1);
+      border-color: var(--highlight-color);
+    }
+  </style>
+</head>
+<body>
+<header>
+<div class="profile-pic"></div>
+<h1>محمدمهرپور</h1>
+<div style="margin-top: 1rem;"></div>
+<div style="margin-top: 1.5rem;">
+<a href="index.html" style="padding: 0.8rem 1.5rem; background: var(--accent-color); color: #000;
+          border-radius: 8px; font-weight: bold; text-decoration: none; transition: background 0.3s;">
+            بازگشت به صفحه اصلی
+          </a>
+</div>
+</header>
+<script>
+    document.querySelectorAll('section').forEach(section => {
+      section.style.opacity = 0;
+      section.style.transform = 'translateY(50px)';
+      window.addEventListener('scroll', () => {
+        const top = section.getBoundingClientRect().top;
+        if (top < window.innerHeight - 100) {
+          section.style.transition = 'all 0.8s ease';
+          section.style.opacity = 1;
+          section.style.transform = 'translateY(0)';
+        }
+      });
+    });
+  </script>
+<section id="additional">
+<h2>محتوای موسیقی و علایق</h2>
+<ul>
+<li>آموزش موسیقی (گیتار و پیانو)</li>
+</ul>
+<div class="interests">
+<div class="interest-card">
+<i class="fas fa-guitar"></i>
+<div>نوازندگی گیتار</div>
+</div>
+<div class="interest-card">
+<i class="fas fa-music"></i>
+<div>نوازندگی پیانو</div>
+</div>
+<div class="interest-card">
+<i class="fas fa-swimmer"></i>
+<div>شنا</div>
+</div>
+<div class="interest-card">
+<i class="fab fa-youtube"></i>
+<div>تولید محتوا در یوتیوب</div>
+</div>
+<div class="interest-card">
+<i class="fas fa-brain"></i>
+<div>هوش مصنوعی</div>
+</div>
+</div>
+<h2>نمونه‌کارها</h2>
+<div class="interests">
+<div class="interest-card">
+<a href="https://www.youtube.com/@ma.mehrpoor" target="_blank" title="Mehrpoor Music">
+<i class="fab fa-youtube"></i>
+<div><strong>Mehrpoor Music</strong></div>
+<div>آموزش موسیقی و تحلیل موزیک</div>
+</a>
+<a href="https://www.instagram.com/ma.mehrpoor" target="_blank" title="Instagram">
+<i class="fab fa-instagram"></i>
+</a>
+</div>
+<div class="interest-card">
+<a href="https://www.youtube.com/@station_chy" target="_blank" title="Station CHY">
+<i class="fab fa-youtube"></i>
+<div><strong>Station CHY</strong></div>
+<div>مدیریت کانال، گویندگی، ادیت ویدیو</div>
+</a>
+</div>
+</div>
+</section>
+</body>
+</html>

@@ -1,12 +1,13 @@
 <!DOCTYPE html>
+
 <html dir="rtl" lang="fa">
 <head>
-  <meta charset="utf-8"/>
-  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-  <title>محمدعلی فتحی | برنامه‌نویس و تحلیلگر داده</title>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
-  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&amp;display=swap" rel="stylesheet"/>
-  <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>محمدعلی فتحی | برنامه‌نویس و تحلیلگر داده</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<style>
     :root {
       --bg-color: #121212;
       --accent-color: #ff6f00;
@@ -79,44 +80,223 @@
     ul li {
       margin-bottom: 0.6rem;
     }
+
+    .portfolio-icons,
+    .contact-icons {
+      text-align: center;
+      margin-top: 1rem;
+    }
+
+    .portfolio-icons a,
+    .contact-icons a {
+      font-size: 2rem;
+      margin: 0 0.7rem;
+      color: var(--accent-color);
+      transition: transform 0.4s ease, color 0.4s ease;
+    }
+
+    .portfolio-icons a:hover,
+    .contact-icons a:hover {
+      transform: scale(1.2);
+      color: var(--highlight-color);
+    }
+
+    .skills-grid {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .skill {
+      margin: 1rem 0;
+    }
+
+    .skill-label {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 0.4rem;
+    }
+
+    .skill-bar {
+      width: 100%;
+      height: 12px;
+      background: #333;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .skill-bar-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--accent-color), var(--highlight-color));
+      width: 0%;
+      border-radius: 10px;
+      transition: width 2s ease-in-out;
+    }
+
+    .interests {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .interest-card {
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: 12px;
+      padding: 1.5rem;
+      width: 160px;
+      text-align: center;
+      transition: transform 0.4s ease;
+    }
+
+    .interest-card i {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+      color: var(--accent-color);
+    }
+
+    .interest-card:hover {
+      transform: scale(1.1);
+      border-color: var(--highlight-color);
+    }
   </style>
 </head>
 <body>
-
 <header>
-  <div class="profile-pic" style="background-image: url('https://cdn.imgurl.ir/uploads/h31672_profile.png');"></div>
-  <h1>محمدعلی فتحی | برنامه‌نویس، تحلیلگر داده و متخصص هوش مصنوعی</h1>
+<div class="profile-pic"></div>
+<h1>محمدعلی فتحی | برنامه‌نویس، تحلیلگر داده و متخصص هوش مصنوعی</h1>
+
 </header>
-
 <section id="about">
-  <h2>درباره من</h2>
-  <p>
-    من <strong>محمدعلی فتحی</strong> هستم؛ Full-Stack Developer و Data Analyst با تمرکز بر توسعه‌ی سیستم‌های تحت وب و راه‌حل‌های داده‌محور (Data-Driven Solutions).<br><br>
-    تخصص من شامل طراحی و پیاده‌سازی Web Applications با استفاده از Python و Django، تحلیل داده‌های پیچیده با رویکرد Insight Extraction، و توسعه‌ی Intelligent Bots برای خودکارسازی فرآیندهای کسب‌وکار است.<br><br>
-    با سابقه‌ای قوی در زمینه <em>Data Analytics, Predictive Modeling, Process Automation</em> و همچنین بهینه‌سازی تجربه کاربری (UX Optimization)، توانسته‌ام در پروژه‌های مختلف، ارزش قابل سنجشی خلق کنم.<br><br>
-    ترکیب دانش آماری، تفکر الگوریتمی و درک نیازهای کاربران، نقطه قوت اصلی من در ارائه‌ی راه‌کارهای نوآورانه و مقیاس‌پذیر است.
-  </p>
+<h2>درباره من</h2>
+<p>
+      من محمدعلی فتحی هستم؛ برنامه‌نویس و تحلیلگر داده با تخصص در Python، Django و تحلیل داده با ابزارهای مدرن مانند Pandas و NumPy.
+      تمرکز اصلی من توسعه وب، ساخت ربات‌های هوشمند، و خودکارسازی فرآیندهاست. در کنار تخصص فنی، به بهینه‌سازی تجربه کاربری (UX)، طراحی رابط (UI) و حل مسائل پیچیده با الگوریتم‌های هوش مصنوعی علاقه‌مندم.
+    </p>
 </section>
-
 <section id="resume">
-  <h2>رزومه</h2>
-  <ul>
-    <li><strong>🎓 تحصیلات:</strong> کارشناسی آمار - دانشگاه تهران</li>
-    <li><strong>💼 تجربه کاری:</strong>
-      <ul>
-        <li>Full-Stack Web Developer با تمرکز بر طراحی و توسعه سیستم‌های مقیاس‌پذیر با Django و سیستم‌های پایگاه داده</li>
-        <li>Data Analyst با تجربه در تحلیل داده‌های عددی، بهینه‌سازی فرآیندها و ایجاد داشبوردهای مدیریتی</li>
-        <li>Business Consultant در شرکت‌های PDN و iNoti با نقش ترکیبی در تحلیل داده و مشاوره فروش</li>
-        <li>طراح و توسعه‌دهنده ربات‌های هوشمند برای پیام‌رسان تلگرام با قابلیت‌های خودکارسازی پیشرفته</li>
-      </ul>
-    </li>
-    <li><strong>📜 گواهینامه‌ها و مدارک:</strong>
-      <ul>
-        <li>گواهینامه بین‌المللی Python Programming – مجتمع فنی تهران</li>
-      </ul>
-    </li>
-  </ul>
+<h2>رزومه</h2>
+<ul>
+<li>کارشناس آمار از دانشگاه تهران</li>
+<li>برنامه‌نویس Python و Django (بیش از ۳ سال تجربه)</li><li>دارای مدرک بین‌المللی پایتون از مجتمع فنی تهران</li>
+<li>تحلیل‌گر داده با پکیج‌های Numpy, Pandas, Scipy</li>
+<li>ساخت و مدیریت ربات‌های تلگرام با PBT</li>
+<li>تجربه کاری در PDN و آینوتی به عنوان کارشناس داده و مشاور فروش</li>
+</ul>
+</section>
+<section id="services">
+<h2>خدمات من</h2>
+<ul>
+<li>برنامه‌نویسی و توسعه وب با Django</li>
+<li>تحلیل و مصورسازی داده</li>
+<li>ساخت ربات‌های تلگرامی هوشمند</li>
+<li>تولید و ادیت ویدیویی حرفه‌ای</li>
+<li>آموزش موسیقی (گیتار و پیانو)</li>
+<li>ادمینی شبکه‌های اجتماعی و بهینه‌سازی محتوا (SEO)</li>
+</ul>
+</section>
+<section id="skills">
+<h2>Skills &amp; Certificates</h2>
+<div class="skills-grid">
+<div class="skill">
+<div class="skill-label"><span>Python</span><span>90%</span></div>
+<div class="skill-bar"><div class="skill-bar-fill" style="width:90%"></div></div>
+</div>
+<div class="skill">
+<div class="skill-label"><span>Django</span><span>85%</span></div>
+<div class="skill-bar"><div class="skill-bar-fill" style="width:85%"></div></div>
+</div>
+<div class="skill">
+<div class="skill-label"><span>SQL &amp; Databases</span><span>70%</span></div>
+<div class="skill-bar"><div class="skill-bar-fill" style="width:70%"></div></div>
+</div>
+<div class="skill">
+<div class="skill-label"><span>Data Analysis</span><span>75%</span></div>
+<div class="skill-bar"><div class="skill-bar-fill" style="width:75%"></div></div>
+</div>
+<div class="skill">
+<div class="skill-label"><span>Telegram Bots</span><span>65%</span></div>
+<div class="skill-bar"><div class="skill-bar-fill" style="width:65%"></div></div>
+</div>
+<div class="skill">
+<div class="skill-label"><span>Flutter</span><span>60%</span></div>
+<div class="skill-bar"><div class="skill-bar-fill" style="width:60%"></div></div>
+</div>
+<div class="skill">
+<div class="skill-label"><span>JavaScript &amp; Web</span><span>60%</span></div>
+<div class="skill-bar"><div class="skill-bar-fill" style="width:60%"></div></div>
+</div>
+<div class="skill">
+<div class="skill-label"><span>Video Editing</span><span>75%</span></div>
+<div class="skill-bar"><div class="skill-bar-fill" style="width:75%"></div></div>
+</div>
+<div class="skill">
+<div class="skill-label"><span>Social Media &amp; SEO</span></div>
+<div class="skill-bar"><div class="skill-bar-fill" style="width:80%"></div></div>
+</div>
+<div class="skill">
+<div class="skill-label"><span>Advanced English Certificate</span></div>
+<div class="skill-bar"><div class="skill-bar-fill" style="width:100%"></div></div>
+</div>
+<div class="skill">
+<div class="skill-label"><span>International Python Certificate</span></div>
+<div class="skill-bar"><div class="skill-bar-fill" style="width:100%"></div></div>
+</div>
+</div>
+</section>
+<section id="portfolio">
+<h2>نمونه‌کارها</h2>
+<div class="interests">
+<div class="interest-card">
+<a href="https://www.youtube.com/@biabepors" target="_blank" title="BiaBePors">
+<i class="fab fa-youtube"></i>
+<div><strong>BiaBePors</strong></div>
+<div>آموزش برنامه‌نویسی، نرم‌افزارهای ادیت، تحلیل بازارهای مالی</div>
+</a>
+</div>
+
+<div class="interest-card">
+<a href="https://github.com/mohammadali008" target="_blank" title="GitHub Portfolio">
+<i class="fab fa-github"></i>
+<div><strong>GitHub Projects</strong></div>
+<div>نمونه‌کارهای برنامه‌نویسی و پروژه‌های اپن‌سورس من</div>
+</a>
+</div>
+</div>
+</section>
+<section id="contact">
+<h2>تماس با من</h2>
+<div class="contact-icons">
+<a href="mailto:mohammad.work0076@gmail.com" title="ایمیل"><i class="fas fa-envelope"></i></a>
+<a href="https://www.linkedin.com/in/mohammadali-fathi-406ab6306/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+<a href="https://github.com/mohammadali008" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+<a href="https://t.me/pro_man008" title="Telegram"><i class="fab fa-telegram"></i></a></div>
+
+</section>
+<section>
+  <div style="margin-top: 2rem; display: flex; justify-content: center; align-items: center;">
+    <a href="second.html" style="padding: 0.9rem 1.7rem; background: linear-gradient(90deg, var(--accent-color), var(--highlight-color));
+      color: #000; border-radius: 10px; font-weight: bold; text-decoration: none; font-size: 1rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.4); transition: all 0.3s ease;">
+      مشاهده فعالیت‌های چندرسانه‌ای و علایق من
+    </a>
+  </div>
 </section>
 
+<script>
+    document.querySelectorAll('section').forEach(section => {
+      section.style.opacity = 0;
+      section.style.transform = 'translateY(50px)';
+      window.addEventListener('scroll', () => {
+        const top = section.getBoundingClientRect().top;
+        if (top < window.innerHeight - 100) {
+          section.style.transition = 'all 0.8s ease';
+          section.style.opacity = 1;
+          section.style.transform = 'translateY(0)';
+        }
+      });
+    });
+  </script>
 </body>
 </html>

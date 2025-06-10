@@ -1,3 +1,88 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="fa">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>محمدعلی فتحی | برنامه‌نویس و تحلیلگر داده</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&amp;display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --bg-color: #121212;
+      --accent-color: #ff6f00;
+      --highlight-color: #00bcd4;
+      --glass-bg: rgba(255, 255, 255, 0.05);
+      --glass-border: rgba(255, 255, 255, 0.15);
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Vazirmatn', sans-serif;
+      background: linear-gradient(135deg, #1c1c1c, #2a2a2a);
+      color: #ffffff;
+      scroll-behavior: smooth;
+    }
+
+    header {
+      text-align: center;
+      padding: 3rem 2rem 2rem;
+      background: var(--glass-bg);
+      border-bottom: 1px solid var(--glass-border);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    }
+
+    .profile-pic {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      background-image: url('https://cdn.imgurl.ir/uploads/h31672_profile.png');
+      background-size: cover;
+      background-position: center;
+      margin: 0 auto 1rem;
+      border: 4px solid var(--accent-color);
+      box-shadow: 0 0 25px rgba(255,111,0,0.6);
+      animation: bounceIn 1.2s ease;
+    }
+
+    @keyframes bounceIn {
+      0% { transform: scale(0.5); opacity: 0; }
+      60% { transform: scale(1.2); opacity: 1; }
+      100% { transform: scale(1); }
+    }
+
+    header h1 {
+      font-size: 2rem;
+      background: linear-gradient(90deg, var(--accent-color), var(--highlight-color));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight: bold;
+      animation: fadeIn 1.5s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    section {
+      padding: 3rem 2rem;
+      border-bottom: 1px solid var(--glass-border);
+    }
+
+    section h2 {
+      color: var(--highlight-color);
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
+    }
+
+    ul li {
+      margin-bottom: 0.6rem;
+    }
+  </style>
+</head>
+<body>
+
 <header>
   <div class="profile-pic" style="background-image: url('https://cdn.imgurl.ir/uploads/h31672_profile.png');"></div>
   <h1>محمدعلی فتحی | برنامه‌نویس، تحلیلگر داده و متخصص هوش مصنوعی</h1>
@@ -6,12 +91,9 @@
 <section id="about">
   <h2>درباره من</h2>
   <p>
-    من <strong>محمدعلی فتحی</strong> هستم؛ Full-Stack Developer و Data Analyst با تمرکز بر توسعه‌ی سیستم‌های تحت وب و راه‌حل‌های داده‌محور (Data-Driven Solutions).  
-    <br><br>
-    تخصص من شامل طراحی و پیاده‌سازی Web Applications با استفاده از Python و Django، تحلیل داده‌های پیچیده با رویکرد Insight Extraction، و توسعه‌ی Intelligent Bots برای خودکارسازی فرآیندهای کسب‌وکار است.  
-    <br><br>
-    با سابقه‌ای قوی در زمینه <em>Data Analytics, Predictive Modeling, Process Automation</em> و همچنین بهینه‌سازی تجربه کاربری (UX Optimization)، توانسته‌ام در پروژه‌های مختلف، ارزش قابل سنجشی خلق کنم.  
-    <br><br>
+    من <strong>محمدعلی فتحی</strong> هستم؛ Full-Stack Developer و Data Analyst با تمرکز بر توسعه‌ی سیستم‌های تحت وب و راه‌حل‌های داده‌محور (Data-Driven Solutions).<br><br>
+    تخصص من شامل طراحی و پیاده‌سازی Web Applications با استفاده از Python و Django، تحلیل داده‌های پیچیده با رویکرد Insight Extraction، و توسعه‌ی Intelligent Bots برای خودکارسازی فرآیندهای کسب‌وکار است.<br><br>
+    با سابقه‌ای قوی در زمینه <em>Data Analytics, Predictive Modeling, Process Automation</em> و همچنین بهینه‌سازی تجربه کاربری (UX Optimization)، توانسته‌ام در پروژه‌های مختلف، ارزش قابل سنجشی خلق کنم.<br><br>
     ترکیب دانش آماری، تفکر الگوریتمی و درک نیازهای کاربران، نقطه قوت اصلی من در ارائه‌ی راه‌کارهای نوآورانه و مقیاس‌پذیر است.
   </p>
 </section>
@@ -19,10 +101,7 @@
 <section id="resume">
   <h2>رزومه</h2>
   <ul>
-    <li><strong>🎓 تحصیلات:</strong>  
-      کارشناسی آمار - دانشگاه تهران
-    </li>
-
+    <li><strong>🎓 تحصیلات:</strong> کارشناسی آمار - دانشگاه تهران</li>
     <li><strong>💼 تجربه کاری:</strong>
       <ul>
         <li>Full-Stack Web Developer با تمرکز بر طراحی و توسعه سیستم‌های مقیاس‌پذیر با Django و سیستم‌های پایگاه داده</li>
@@ -31,7 +110,6 @@
         <li>طراح و توسعه‌دهنده ربات‌های هوشمند برای پیام‌رسان تلگرام با قابلیت‌های خودکارسازی پیشرفته</li>
       </ul>
     </li>
-
     <li><strong>📜 گواهینامه‌ها و مدارک:</strong>
       <ul>
         <li>گواهینامه بین‌المللی Python Programming – مجتمع فنی تهران</li>
@@ -39,3 +117,6 @@
     </li>
   </ul>
 </section>
+
+</body>
+</html>

@@ -1,12 +1,12 @@
-<!DOCTYPE html>
 
+<!DOCTYPE html>
 <html dir="rtl" lang="fa">
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>محمدعلی فتحی | برنامه‌نویس و تحلیلگر داده</title>
+<title>محمدمهرپور | فعالیت‌های چندرسانه‌ای و علایق</title>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap" rel="stylesheet"/>
 <style>
     :root {
       --bg-color: #121212;
@@ -18,6 +18,7 @@
 
     body {
       margin: 0;
+      padding: 0 1.5rem;
       font-family: 'Vazirmatn', sans-serif;
       background: linear-gradient(135deg, #1c1c1c, #2a2a2a);
       color: #ffffff;
@@ -26,7 +27,7 @@
 
     header {
       text-align: center;
-      padding: 3rem 2rem 2rem;
+      padding: 6rem 2rem 2rem;
       background: var(--glass-bg);
       border-bottom: 1px solid var(--glass-border);
       backdrop-filter: blur(10px);
@@ -37,7 +38,7 @@
       width: 160px;
       height: 160px;
       border-radius: 50%;
-      background-image: url('https://s6.uupload.ir/files/insta-profile_m7w.png');
+      background-image: url('https://uploadkon.ir/uploads/674a05_25insta-profile.png');
       background-size: cover;
       background-position: center;
       margin: 0 auto 1rem;
@@ -67,8 +68,10 @@
     }
 
     section {
-      padding: 3rem 2rem;
+      padding: 3rem 0;
       border-bottom: 1px solid var(--glass-border);
+      max-width: 1100px;
+      margin: 0 auto;
     }
 
     section h2 {
@@ -77,59 +80,23 @@
       margin-bottom: 1rem;
     }
 
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
     ul li {
       margin-bottom: 0.6rem;
     }
 
-    .portfolio-icons,
-    .contact-icons {
-      text-align: center;
-      margin-top: 1rem;
-    }
-
-    .portfolio-icons a,
-    .contact-icons a {
-      font-size: 2rem;
-      margin: 0 0.7rem;
+    ul li::before {
+      content: "\f105";
+      font-family: "Font Awesome 6 Free";
+      font-weight: 900;
       color: var(--accent-color);
-      transition: transform 0.4s ease, color 0.4s ease;
-    }
-
-    .portfolio-icons a:hover,
-    .contact-icons a:hover {
-      transform: scale(1.2);
-      color: var(--highlight-color);
-    }
-
-    .skills-grid {
-      max-width: 800px;
-      margin: 0 auto;
-    }
-
-    .skill {
-      margin: 1rem 0;
-    }
-
-    .skill-label {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 0.4rem;
-    }
-
-    .skill-bar {
-      width: 100%;
-      height: 12px;
-      background: #333;
-      border-radius: 10px;
-      overflow: hidden;
-    }
-
-    .skill-bar-fill {
-      height: 100%;
-      background: linear-gradient(90deg, var(--accent-color), var(--highlight-color));
-      width: 0%;
-      border-radius: 10px;
-      transition: width 2s ease-in-out;
+      margin-left: 0.5rem;
+      display: inline-block;
+      direction: ltr;
     }
 
     .interests {
@@ -160,81 +127,117 @@
       transform: scale(1.1);
       border-color: var(--highlight-color);
     }
-  </style>
+
+    .back-button {
+      margin-top: 2rem;
+      display: flex;
+      justify-content: center;
+    }
+
+    .back-button a {
+      padding: 0.9rem 1.7rem;
+      background: var(--accent-color);
+      color: #000;
+      border-radius: 10px;
+      font-weight: bold;
+      text-decoration: none;
+      font-size: 1rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+      transition: all 0.3s ease;
+    }
+
+    .back-button a:hover {
+      background: var(--highlight-color);
+    }
+</style>
 </head>
 <body>
 <header>
-<div class="profile-pic"></div>
-<h1>محمدمهرپور</h1>
-<div style="margin-top: 1rem;"></div>
-<div style="margin-top: 1.5rem;">
-<a href="index.html" style="padding: 0.8rem 1.5rem; background: var(--accent-color); color: #000;
-          border-radius: 8px; font-weight: bold; text-decoration: none; transition: background 0.3s;">
-            بازگشت به صفحه اصلی
-          </a>
-</div>
+  <div class="profile-pic"></div>
+  <h1>محمدمهرپور|مدرس آواز و موسیقی</h1>
+  <div class="back-button">
+    <a href="index.html">بازگشت به صفحه اصلی</a>
+  </div>
 </header>
-<script>
-    document.querySelectorAll('section').forEach(section => {
-      section.style.opacity = 0;
-      section.style.transform = 'translateY(50px)';
-      window.addEventListener('scroll', () => {
-        const top = section.getBoundingClientRect().top;
-        if (top < window.innerHeight - 100) {
-          section.style.transition = 'all 0.8s ease';
-          section.style.opacity = 1;
-          section.style.transform = 'translateY(0)';
-        }
-      });
+
+
+    <section id="intro" style="text-align: center;">
+      <h2>در کنارت هستم...</h2>
+      <ul style="max-width: 600px; margin: 0 auto; text-align: right;">
+        <li>تدریس گیتار</li>
+        <li>تدریس پیانو</li>
+        <li>تدریس تئوری موسیقی</li>
+        <li>تدریس آواز سنتی و پاپ</li>
+        <li>تدریس آواز و موسیقی به زبان انگلیسی</li>
+        <li>کلاس‌های آنلاین و حضوری</li>
+        <li>ترانه‌سرایی برای شما</li>
+      </ul>
+    </section>
+
+    <section id="additional">
+    
+  <h2>محتوای موسیقی و علایق</h2>
+  <ul>
+    <li>آموزش موسیقی (گیتار و پیانو)</li>
+  </ul>
+  <div class="interests">
+    <div class="interest-card"><i class="fas fa-guitar"></i><div>نوازندگی گیتار</div></div>
+    <div class="interest-card"><i class="fas fa-music"></i><div>نوازندگی پیانو</div></div>
+    <div class="interest-card"><i class="fas fa-swimmer"></i><div>شنا</div></div>
+    <div class="interest-card"><i class="fab fa-youtube"></i><div>تولید محتوا در یوتیوب</div></div>
+    <div class="interest-card"><i class="fas fa-brain"></i><div>هوش مصنوعی</div></div>
+  </div>
+
+  <h2>نمونه‌کارها</h2>
+  <div class="interests">
+    <div class="interest-card">
+      <a href="https://www.youtube.com/@ma.mehrpoor" target="_blank" title="Mehrpoor Music">
+        <i class="fab fa-youtube"></i>
+        <div><strong>Mehrpoor Music</strong></div>
+        <div>آموزش موسیقی و تحلیل موزیک</div>
+      </a>
+      <a href="https://www.instagram.com/ma.mehrpoor" target="_blank" title="Instagram">
+        <i class="fab fa-instagram"></i>
+      </a>
+    </div>
+    <div class="interest-card">
+      <a href="https://www.youtube.com/@station_chy" target="_blank" title="Station CHY">
+        <i class="fab fa-youtube"></i>
+        <div><strong>Station CHY</strong></div>
+        <div>مدیریت کانال، گویندگی، ادیت ویدیو</div>
+      </a>
+    </div>
+  </div>
+
+    </section>
+
+    <section id="contact" style="text-align: center;">
+      <h2>تماس با من</h2>
+      <div class="contact-icons">
+        <a href="https://t.me/ma_mehrpoor" target="_blank" title="تلگرام">
+          <i class="fab fa-telegram"></i> ارتباط از طریق تلگرام
+        </a>
+      </div>
+    </section>
+
+    <script>
+    
+  const sections = document.querySelectorAll('section');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.transition = 'all 0.8s ease';
+        entry.target.style.opacity = 1;
+        entry.target.style.transform = 'translateY(0)';
+      }
     });
-  </script>
-<section id="additional">
-<h2>محتوای موسیقی و علایق</h2>
-<ul>
-<li>آموزش موسیقی (گیتار و پیانو)</li>
-</ul>
-<div class="interests">
-<div class="interest-card">
-<i class="fas fa-guitar"></i>
-<div>نوازندگی گیتار</div>
-</div>
-<div class="interest-card">
-<i class="fas fa-music"></i>
-<div>نوازندگی پیانو</div>
-</div>
-<div class="interest-card">
-<i class="fas fa-swimmer"></i>
-<div>شنا</div>
-</div>
-<div class="interest-card">
-<i class="fab fa-youtube"></i>
-<div>تولید محتوا در یوتیوب</div>
-</div>
-<div class="interest-card">
-<i class="fas fa-brain"></i>
-<div>هوش مصنوعی</div>
-</div>
-</div>
-<h2>نمونه‌کارها</h2>
-<div class="interests">
-<div class="interest-card">
-<a href="https://www.youtube.com/@ma.mehrpoor" target="_blank" title="Mehrpoor Music">
-<i class="fab fa-youtube"></i>
-<div><strong>Mehrpoor Music</strong></div>
-<div>آموزش موسیقی و تحلیل موزیک</div>
-</a>
-<a href="https://www.instagram.com/ma.mehrpoor" target="_blank" title="Instagram">
-<i class="fab fa-instagram"></i>
-</a>
-</div>
-<div class="interest-card">
-<a href="https://www.youtube.com/@station_chy" target="_blank" title="Station CHY">
-<i class="fab fa-youtube"></i>
-<div><strong>Station CHY</strong></div>
-<div>مدیریت کانال، گویندگی، ادیت ویدیو</div>
-</a>
-</div>
-</div>
-</section>
+  }, { threshold: 0.1 });
+
+  sections.forEach(section => {
+    section.style.opacity = 0;
+    section.style.transform = 'translateY(50px)';
+    observer.observe(section);
+  });
+</script>
 </body>
 </html>

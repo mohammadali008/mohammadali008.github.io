@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
 <head>
@@ -9,158 +8,125 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet"/>
   <style>
     :root {
-      --bg-color: #121212;
-      --accent-color: #ff6f00;
-      --highlight-color: #00bcd4;
-      --glass-bg: rgba(255, 255, 255, 0.05);
-      --glass-border: rgba(255, 255, 255, 0.15);
+      --bg: #121212;
+      --accent: #ff6f00;
+      --highlight: #00bcd4;
+      --glass: rgba(255,255,255,0.05);
+      --glass-b: rgba(255,255,255,0.15);
+      --nav-h: 64px;
     }
-
+    *{box-sizing:border-box}
     body {
       margin: 0;
-      padding: 0 1.5rem;
       font-family: 'Inter', sans-serif;
-      background: linear-gradient(135deg, #1c1c1c, #2a2a2a);
-      color: #ffffff;
+      background: linear-gradient(135deg,#1c1c1c,#2a2a2a);
+      color: #fff;
+      line-height: 1.7;
       scroll-behavior: smooth;
+    }
+    a { color: inherit; text-decoration: none }
+
+    /* NAV */
+    nav {
+      position: fixed; top:0; inset-inline:0; height: var(--nav-h);
+      display:flex; align-items:center; justify-content:space-between;
+      padding: 0 1.25rem;
+      background: var(--glass);
+      border-bottom: 1px solid var(--glass-b);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 2px 8px rgba(0,0,0,.25);
+      z-index:1000;
+    }
+    .menu { display:flex; gap:1.5rem; }
+    .menu a { font-weight:600; }
+    .cta {
+      padding:.55rem 1rem; border-radius:8px; font-weight:700; color:#000;
+      background:linear-gradient(90deg,var(--accent),var(--highlight));
+    }
+    .burger {
+      display:none; border:0; background:transparent; font-size:1.5rem; color:#fff;
     }
 
     header {
+      padding-top: calc(var(--nav-h) + 2rem);
       text-align: center;
-      padding: 6rem 2rem 2rem;
-      background: var(--glass-bg);
-      border-bottom: 1px solid var(--glass-border);
-      backdrop-filter: blur(10px);
-      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+      background: var(--glass);
+      border-bottom:1px solid var(--glass-b);
+      box-shadow:0 4px 20px rgba(0,0,0,.3);
+      padding-bottom: 2rem;
     }
-
     .profile-pic {
-      width: 160px;
-      height: 160px;
-      border-radius: 50%;
-      background-image: url('https://uploadkon.ir/uploads/2aa105_25profile-compressed.jpg');
-      background-size: cover;
-      background-position: center;
-      margin: 0 auto 1rem;
-      border: 4px solid var(--accent-color);
-      box-shadow: 0 0 25px rgba(255,111,0,0.6);
+      width:160px; height:160px; border-radius:50%;
+      margin:0 auto 1rem;
+      background:url('https://uploadkon.ir/uploads/2aa105_25profile-compressed.jpg') center/cover no-repeat;
+      border:4px solid var(--accent);
+      box-shadow:0 0 25px rgba(255,111,0,.6);
     }
-
     header h1 {
-      font-size: 2rem;
-      background: linear-gradient(90deg, var(--accent-color), var(--highlight-color));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      font-weight: bold;
+      font-size:2rem; font-weight:700;
+      background:linear-gradient(90deg,var(--accent),var(--highlight));
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
     }
 
     section {
-      padding: 3rem 0;
-      border-bottom: 1px solid var(--glass-border);
-      max-width: 1100px;
-      margin: 0 auto;
+      padding:2.5rem 1rem;
+      border-bottom:1px solid var(--glass-b);
+      max-width:1100px; margin:auto;
+      scroll-margin-top:calc(var(--nav-h) + 10px);
     }
-
     h2 {
-      color: var(--highlight-color);
-      font-size: 1.6rem;
-      margin-bottom: 1rem;
+      color:var(--highlight);
+      font-size:1.6rem;
+      margin-bottom:1rem;
+    }
+    ul{list-style:none; padding:0; margin:0}
+    ul li{margin:0 0 .6rem}
+    ul li::before{
+      content:"\f105"; font-family:"Font Awesome 6 Free"; font-weight:900;
+      color:var(--accent); margin-right:.5rem;
     }
 
-    ul {
-      list-style: none;
-      padding: 0;
+    .skills-grid {max-width:800px; margin:auto;}
+    .skill{margin:1rem 0}
+    .skill-label{display:flex; justify-content:space-between; margin-bottom:.4rem}
+    .skill-bar{width:100%; height:12px; background:#333; border-radius:10px; overflow:hidden}
+    .skill-bar-fill{
+      height:100%;
+      background:linear-gradient(90deg,var(--accent),var(--highlight));
+      border-radius:10px;
     }
 
-    ul li {
-      margin-bottom: 0.6rem;
-    }
+    .contact-icons{text-align:center; margin-top:1rem}
+    .contact-icons a{font-size:1.8rem; margin:0 .6rem; color:var(--accent); transition:color .2s}
+    .contact-icons a:hover{color:var(--highlight)}
 
-    ul li::before {
-      content: "\f105";
-      font-family: "Font Awesome 6 Free";
-      font-weight: 900;
-      color: var(--accent-color);
-      margin-right: 0.5rem;
-      display: inline-block;
-    }
-
-    .skills-grid {
-      max-width: 800px;
-      margin: 0 auto;
-    }
-
-    .skill {
-      margin: 1rem 0;
-    }
-
-    .skill-label {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 0.4rem;
-    }
-
-    .skill-bar {
-      width: 100%;
-      height: 12px;
-      background: #333;
-      border-radius: 10px;
-      overflow: hidden;
-    }
-
-    .skill-bar-fill {
-      height: 100%;
-      background: linear-gradient(90deg, var(--accent-color), var(--highlight-color));
-      border-radius: 10px;
-    }
-
-    .interest-card {
-      background: var(--glass-bg);
-      border: 1px solid var(--glass-border);
-      border-radius: 12px;
-      padding: 1.5rem;
-      width: 160px;
-      text-align: center;
-    }
-
-    .interest-card i {
-      font-size: 2.5rem;
-      margin-bottom: 0.5rem;
-      color: var(--accent-color);
-    }
-
-    .contact-icons {
-      text-align: center;
-      margin-top: 1rem;
-    }
-
-    .contact-icons a {
-      font-size: 2rem;
-      margin: 0 0.7rem;
-      color: var(--accent-color);
-    }
-
-    .contact-icons a:hover {
-      color: var(--highlight-color);
+    /* Responsive */
+    @media (max-width:768px){
+      .burger{display:block}
+      .menu{
+        display:none; position:absolute; top:var(--nav-h); inset-inline:0;
+        flex-direction:column; background:var(--glass);
+        padding:1rem; gap:1rem; border-bottom:1px solid var(--glass-b);
+      }
+      .menu.open{display:flex}
+      .cta{display:block; text-align:center}
+      header h1{font-size:1.35rem; line-height:1.8}
+      .profile-pic{width:120px; height:120px}
     }
   </style>
 </head>
 <body>
 
-
-<nav style="background: var(--glass-bg); padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--glass-border); backdrop-filter: blur(10px); box-shadow: 0 2px 8px rgba(0,0,0,0.2);">
-  <div style="display: flex; gap: 2rem;">
-    <a href="#about" style="color: white; text-decoration: none; font-weight: bold;">About</a>
-    <a href="#resume" style="color: white; text-decoration: none; font-weight: bold;">Resume</a>
-    <a href="#services" style="color: white; text-decoration: none; font-weight: bold;">Services</a>
-    <a href="#skills" style="color: white; text-decoration: none; font-weight: bold;">Skills</a>
-    <a href="#contact" style="color: white; text-decoration: none; font-weight: bold;">Contact</a>
-  </div>
-  <div>
-    <a href="index.html" style="padding: 0.5rem 1.2rem; background: linear-gradient(90deg, var(--accent-color), var(--highlight-color));
-      color: #000; border-radius: 8px; font-weight: bold; text-decoration: none; transition: background 0.3s;">
-      Persian
-    </a>
+<nav>
+  <button class="burger" id="burger"><i class="fas fa-bars"></i></button>
+  <div class="menu" id="menu">
+    <a href="#about">About</a>
+    <a href="#resume">Resume</a>
+    <a href="#services">Services</a>
+    <a href="#skills">Skills</a>
+    <a href="#contact">Contact</a>
+    <a href="index.html" class="cta">Persian</a>
   </div>
 </nav>
 
@@ -227,6 +193,26 @@
     <a href="https://t.me/pro_man008" title="Telegram"><i class="fab fa-telegram"></i></a>
   </div>
 </section>
+
+<script>
+  const burger = document.getElementById('burger');
+  const menu = document.getElementById('menu');
+  const burgerIcon = burger.querySelector('i');
+
+  burger.addEventListener('click', ()=>{
+    menu.classList.toggle('open');
+    burgerIcon.classList.toggle('fa-bars');
+    burgerIcon.classList.toggle('fa-xmark');
+  });
+
+  document.querySelectorAll('#menu a').forEach(link=>{
+    link.addEventListener('click', ()=>{
+      menu.classList.remove('open');
+      burgerIcon.classList.add('fa-bars');
+      burgerIcon.classList.remove('fa-xmark');
+    });
+  });
+</script>
 
 </body>
 </html>

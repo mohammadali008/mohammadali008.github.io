@@ -1,169 +1,138 @@
-
 <!DOCTYPE html>
 <html dir="rtl" lang="fa">
 <head>
 <meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>محمدمهرپور | فعالیت‌های چندرسانه‌ای و علایق</title>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap" rel="stylesheet"/>
+
 <style>
-    :root {
-      --bg-color: #121212;
-      --accent-color: #ff6f00;
-      --highlight-color: #00bcd4;
-      --glass-bg: rgba(255, 255, 255, 0.05);
-      --glass-border: rgba(255, 255, 255, 0.15);
-    }
+  :root{
+    --bg:#121212; --accent:#ff6f00; --highlight:#00bcd4;
+    --glass:rgba(255,255,255,0.05); --glass-b:rgba(255,255,255,0.15);
+    --container:1100px; --radius:12px;
+  }
 
-    body {
-      margin: 0;
-      padding: 0 1.5rem;
-      font-family: 'Vazirmatn', sans-serif;
-      background: linear-gradient(135deg, #1c1c1c, #2a2a2a);
-      color: #ffffff;
-      scroll-behavior: smooth;
-    }
+  *{box-sizing:border-box}
+  body{
+    margin:0; padding:0 1.25rem;
+    font-family:'Vazirmatn',system-ui,Segoe UI,Arial,sans-serif;
+    background:linear-gradient(135deg,#1c1c1c,#2a2a2a);
+    color:#fff; line-height:1.8; scroll-behavior:smooth;
+  }
+  a{color:inherit; text-decoration:none}
+  img{max-width:100%; height:auto; display:block}
 
-    header {
-      text-align: center;
-      padding: 6rem 2rem 2rem;
-      background: var(--glass-bg);
-      border-bottom: 1px solid var(--glass-border);
-      backdrop-filter: blur(10px);
-      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-    }
+  .container{max-width:var(--container); margin-inline:auto}
 
-    .profile-pic {
-      width: 160px;
-      height: 160px;
-      border-radius: 50%;
-      background-image: url('https://uploadkon.ir/uploads/674a05_25insta-profile.png');
-      background-size: cover;
-      background-position: center;
-      margin: 0 auto 1rem;
-      border: 4px solid var(--accent-color);
-      box-shadow: 0 0 25px rgba(255,111,0,0.6);
-      animation: bounceIn 1.2s ease;
-    }
+  header{
+    text-align:center; padding:5.5rem 1.25rem 2rem;
+    background:var(--glass); border-bottom:1px solid var(--glass-b);
+    backdrop-filter:blur(10px); box-shadow:0 4px 20px rgba(0,0,0,.3);
+  }
+  .profile-pic{
+    width:160px; height:160px; border-radius:50%;
+    margin:0 auto 1rem;
+    background:url('https://uploadkon.ir/uploads/674a05_25insta-profile.png') center/cover no-repeat;
+    border:4px solid var(--accent); box-shadow:0 0 25px rgba(255,111,0,.6);
+    animation:bounceIn 1.2s ease;
+  }
+  @keyframes bounceIn{
+    0%{transform:scale(.5);opacity:0}
+    60%{transform:scale(1.2);opacity:1}
+    100%{transform:scale(1)}
+  }
+  header h1{
+    margin:0 0 .75rem;
+    font-size:2rem; font-weight:700;
+    background:linear-gradient(90deg,var(--accent),var(--highlight));
+    -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+    animation:fadeIn 1.1s ease;
+  }
+  @keyframes fadeIn{
+    from{opacity:0; transform:translateY(14px)}
+    to{opacity:1; transform:translateY(0)}
+  }
 
-    @keyframes bounceIn {
-      0% { transform: scale(0.5); opacity: 0; }
-      60% { transform: scale(1.2); opacity: 1; }
-      100% { transform: scale(1); }
-    }
+  .back-button{margin-top:1.25rem; display:flex; justify-content:center}
+  .btn{
+    padding:.9rem 1.7rem; border-radius:10px; font-weight:700; color:#000;
+    background:linear-gradient(90deg,var(--accent),var(--highlight));
+    box-shadow:0 4px 10px rgba(0,0,0,.4); transition:transform .25s ease, filter .25s ease;
+  }
+  .btn:hover{transform:translateY(-2px); filter:brightness(1.05)}
 
-    header h1 {
-      font-size: 2rem;
-      background: linear-gradient(90deg, var(--accent-color), var(--highlight-color));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      font-weight: bold;
-      animation: fadeIn 1.5s ease;
-    }
+  section{
+    padding:2.5rem 0; border-bottom:1px solid var(--glass-b);
+  }
+  h2{
+    color:var(--highlight); font-size:1.6rem; margin:0 0 1rem;
+  }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
+  ul{list-style:none; padding:0; margin:0}
+  ul li{margin:0 0 .6rem}
+  ul li::before{
+    content:"\f105"; font-family:"Font Awesome 6 Free"; font-weight:900;
+    color:var(--accent); margin-left:.5rem; display:inline-block; direction:ltr;
+  }
 
-    section {
-      padding: 3rem 0;
-      border-bottom: 1px solid var(--glass-border);
-      max-width: 1100px;
-      margin: 0 auto;
-    }
+  /* Cards grid */
+  .interests{
+    display:grid; gap:1rem; margin-top:1.25rem;
+    grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+    align-items:stretch;
+  }
+  .interest-card{
+    background:var(--glass); border:1px solid var(--glass-b);
+    border-radius:var(--radius); padding:1.25rem; text-align:center;
+    transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+  }
+  .interest-card:hover{transform:translateY(-4px); border-color:var(--highlight); box-shadow:0 8px 24px rgba(0,0,0,.35)}
+  .interest-card i{font-size:2rem; margin-bottom:.5rem; color:var(--accent)}
 
-    section h2 {
-      color: var(--highlight-color);
-      font-size: 1.6rem;
-      margin-bottom: 1rem;
-    }
+  .contact-icons{display:flex; justify-content:center}
+  .contact-icons a{
+    padding:.85rem 1.2rem; border-radius:10px; font-weight:700; color:#000;
+    background:linear-gradient(90deg,var(--accent),var(--highlight));
+    box-shadow:0 4px 10px rgba(0,0,0,.4); transition:transform .25s ease, filter .25s ease;
+  }
+  .contact-icons a:hover{transform:translateY(-2px); filter:brightness(1.05)}
 
-    ul {
-      list-style: none;
-      padding: 0;
-    }
+  /* Reduce Motion */
+  @media (prefers-reduced-motion:reduce){
+    *{animation:none!important; transition:none!important; scroll-behavior:auto!important}
+  }
 
-    ul li {
-      margin-bottom: 0.6rem;
-    }
-
-    ul li::before {
-      content: "\f105";
-      font-family: "Font Awesome 6 Free";
-      font-weight: 900;
-      color: var(--accent-color);
-      margin-left: 0.5rem;
-      display: inline-block;
-      direction: ltr;
-    }
-
-    .interests {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 2rem;
-      margin-top: 2rem;
-    }
-
-    .interest-card {
-      background: var(--glass-bg);
-      border: 1px solid var(--glass-border);
-      border-radius: 12px;
-      padding: 1.5rem;
-      width: 160px;
-      text-align: center;
-      transition: transform 0.4s ease;
-    }
-
-    .interest-card i {
-      font-size: 2.5rem;
-      margin-bottom: 0.5rem;
-      color: var(--accent-color);
-    }
-
-    .interest-card:hover {
-      transform: scale(1.1);
-      border-color: var(--highlight-color);
-    }
-
-    .back-button {
-      margin-top: 2rem;
-      display: flex;
-      justify-content: center;
-    }
-
-    .back-button a {
-      padding: 0.9rem 1.7rem;
-      background: var(--accent-color);
-      color: #000;
-      border-radius: 10px;
-      font-weight: bold;
-      text-decoration: none;
-      font-size: 1rem;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.4);
-      transition: all 0.3s ease;
-    }
-
-    .back-button a:hover {
-      background: var(--highlight-color);
-    }
+  /* Responsive tweaks */
+  @media (max-width:900px){
+    header{padding-top:4.75rem}
+  }
+  @media (max-width:640px){
+    body{padding:0 .9rem}
+    header h1{font-size:1.35rem; line-height:1.9}
+    .profile-pic{width:120px; height:120px}
+    h2{font-size:1.35rem}
+    .btn,.contact-icons a{width:100%; text-align:center}
+    #intro ul{padding-inline:.25rem}
+  }
 </style>
 </head>
 <body>
-<header>
-  <div class="profile-pic"></div>
-  <h1>محمدمهرپور|مدرس آواز و موسیقی</h1>
-  <div class="back-button">
-    <a href="index.html">بازگشت به صفحه اصلی</a>
-  </div>
-</header>
 
+  <header>
+    <div class="profile-pic"></div>
+    <h1>محمدمهرپور | مدرس آواز و موسیقی</h1>
+    <div class="back-button">
+      <a class="btn" href="index.html">بازگشت به صفحه اصلی</a>
+    </div>
+  </header>
 
-    <section id="intro" style="text-align: center;">
+  <main class="container">
+    <section id="intro" style="text-align:center;">
       <h2>در کنارت هستم...</h2>
-      <ul style="max-width: 600px; margin: 0 auto; text-align: right;">
+      <ul style="max-width:680px; margin:0 auto; text-align:right;">
         <li>تدریس گیتار</li>
         <li>تدریس پیانو</li>
         <li>تدریس تئوری موسیقی</li>
@@ -175,69 +144,74 @@
     </section>
 
     <section id="additional">
-    
-  <h2>محتوای موسیقی و علایق</h2>
-  <ul>
-    <li>آموزش موسیقی (گیتار و پیانو)</li>
-  </ul>
-  <div class="interests">
-    <div class="interest-card"><i class="fas fa-guitar"></i><div>نوازندگی گیتار</div></div>
-    <div class="interest-card"><i class="fas fa-music"></i><div>نوازندگی پیانو</div></div>
-    <div class="interest-card"><i class="fas fa-swimmer"></i><div>شنا</div></div>
-    <div class="interest-card"><i class="fab fa-youtube"></i><div>تولید محتوا در یوتیوب</div></div>
-    <div class="interest-card"><i class="fas fa-brain"></i><div>هوش مصنوعی</div></div>
-  </div>
+      <h2>محتوای موسیقی و علایق</h2>
+      <ul>
+        <li>آموزش موسیقی (گیتار و پیانو)</li>
+      </ul>
 
-  <h2>نمونه‌کارها</h2>
-  <div class="interests">
-    <div class="interest-card">
-      <a href="https://www.youtube.com/@ma.mehrpoor" target="_blank" title="Mehrpoor Music">
-        <i class="fab fa-youtube"></i>
-        <div><strong>Mehrpoor Music</strong></div>
-        <div>آموزش موسیقی و تحلیل موزیک</div>
-      </a>
-      <a href="https://www.instagram.com/ma.mehrpoor" target="_blank" title="Instagram">
-        <i class="fab fa-instagram"></i>
-      </a>
-    </div>
-    <div class="interest-card">
-      <a href="https://www.youtube.com/@station_chy" target="_blank" title="Station CHY">
-        <i class="fab fa-youtube"></i>
-        <div><strong>Station CHY</strong></div>
-        <div>مدیریت کانال، گویندگی، ادیت ویدیو</div>
-      </a>
-    </div>
-  </div>
+      <div class="interests">
+        <div class="interest-card"><i class="fas fa-guitar"></i><div>نوازندگی گیتار</div></div>
+        <div class="interest-card"><i class="fas fa-music"></i><div>نوازندگی پیانو</div></div>
+        <div class="interest-card"><i class="fas fa-person-swimming"></i><div>شنا</div></div>
+        <div class="interest-card"><i class="fab fa-youtube"></i><div>تولید محتوا در یوتیوب</div></div>
+        <div class="interest-card"><i class="fas fa-brain"></i><div>هوش مصنوعی</div></div>
+      </div>
 
-    </section>
+      <h2 style="margin-top:2rem;">نمونه‌کارها</h2>
+      <div class="interests">
+        <div class="interest-card">
+          <a href="https://www.youtube.com/@ma.mehrpoor" target="_blank" title="Mehrpoor Music">
+            <i class="fab fa-youtube"></i>
+            <div><strong>Mehrpoor Music</strong></div>
+            <div>آموزش موسیقی و تحلیل موزیک</div>
+          </a>
+          <div style="margin-top:.75rem">
+            <a href="https://www.instagram.com/ma.mehrpoor" target="_blank" title="Instagram">
+              <i class="fab fa-instagram" style="font-size:1.4rem; color:#ff6f00"></i>
+              <span style="margin:0 .25rem; color:#ddd">Instagram</span>
+            </a>
+          </div>
+        </div>
 
-    <section id="contact" style="text-align: center;">
-      <h2>تماس با من</h2>
-      <div class="contact-icons">
-        <a href="https://t.me/ma_mehrpoor" target="_blank" title="تلگرام">
-          <i class="fab fa-telegram"></i> ارتباط از طریق تلگرام
-        </a>
+        <div class="interest-card">
+          <a href="https://www.youtube.com/@station_chy" target="_blank" title="Station CHY">
+            <i class="fab fa-youtube"></i>
+            <div><strong>Station CHY</strong></div>
+            <div>مدیریت کانال، گویندگی، ادیت ویدیو</div>
+          </a>
+        </div>
       </div>
     </section>
 
-    <script>
-    
-  const sections = document.querySelectorAll('section');
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.style.transition = 'all 0.8s ease';
-        entry.target.style.opacity = 1;
-        entry.target.style.transform = 'translateY(0)';
-      }
-    });
-  }, { threshold: 0.1 });
+    <section id="contact" style="text-align:center;">
+      <h2>تماس با من</h2>
+      <div class="contact-icons">
+        <a href="https://t.me/ma_mehrpoor" target="_blank" title="تلگرام">
+          <i class="fab fa-telegram" style="margin-left:.4rem"></i> ارتباط از طریق تلگرام
+        </a>
+      </div>
+    </section>
+  </main>
 
-  sections.forEach(section => {
-    section.style.opacity = 0;
-    section.style.transform = 'translateY(50px)';
-    observer.observe(section);
-  });
-</script>
+  <script>
+    // Section reveal animation (همان منطق قبلی، با unobserve برای بهبود عملکرد)
+    const sections = document.querySelectorAll('section');
+    const observer = new IntersectionObserver((entries,obs)=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){
+          entry.target.style.transition='all .8s ease';
+          entry.target.style.opacity=1;
+          entry.target.style.transform='translateY(0)';
+          obs.unobserve(entry.target);
+        }
+      });
+    },{threshold:0.12});
+
+    sections.forEach(section=>{
+      section.style.opacity=0;
+      section.style.transform='translateY(40px)';
+      observer.observe(section);
+    });
+  </script>
 </body>
 </html>

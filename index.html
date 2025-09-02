@@ -33,6 +33,20 @@
       background:rgba(18,18,18,.9); backdrop-filter:blur(10px);
       border-bottom:1px solid rgba(255,255,255,.08);
     }
+    .nav::after{
+      content:"";
+      position:fixed;
+      inset:0;
+      background: rgba(0,0,0,0.35);
+      opacity:0;
+      pointer-events:none;
+      transition: opacity .2s ease;
+      z-index:900;
+    }
+    .nav.is-open::after{
+      opacity:1;
+      pointer-events:auto;
+    }
     .nav-inner{
       height:var(--nav-h);
       display:flex; align-items:center; justify-content:space-between;
@@ -133,15 +147,31 @@
     @media (max-width:640px){
       :root{--nav-h:58px}
       .burger{display:inline-flex; align-items:center; justify-content:center}
-      .menu{display:none; flex-direction:column; width:100%; padding:.5rem 0}
+      .menu{
+        display:none;
+        position:absolute;
+        top:var(--nav-h);
+        inset-inline:0;
+        flex-direction:column;
+        gap:1rem;
+        padding:1rem;
+        background: rgba(18,18,18,0.55);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border-bottom:1px solid rgba(255,255,255,0.12);
+        box-shadow:0 10px 24px rgba(0,0,0,0.35);
+        z-index:1000;
+      }
       .menu.open{display:flex}
-      .menu a{width:100%; text-align:center; padding:.7rem}
+      .menu a{width:100%; text-align:center; padding:.7rem; border-radius:10px; background:rgba(255,255,255,0.04)}
+      .menu a:hover{background:rgba(255,255,255,0.08)}
+
+      .cta{width:100%; text-align:center}
       .nav-inner{padding-inline:.25rem}
       header h1{font-size:1.1rem; line-height:1.9}
       .interests{grid-template-columns:1fr}
       .interest-card{padding:1rem}
       .profile-pic{width:120px; height:120px}
-      .cta{width:100%}
     }
   </style>
 </head>
@@ -278,47 +308,4 @@
     <div class="contact-icons">
       <a href="mailto:mohammad.work0076@gmail.com" title="ایمیل"><i class="fas fa-envelope"></i></a>
       <a href="https://www.linkedin.com/in/mohammadali-fathi-406ab6306/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-      <a href="https://github.com/mohammadali008" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-      <a href="https://t.me/pro_man008" title="Telegram"><i class="fab fa-telegram"></i></a>
-    </div>
-  </section>
-
-  <script>
-    // Mobile menu toggle + close-on-click
-    const burger = document.getElementById('burger');
-    const menu = document.getElementById('menu');
-    const burgerIcon = burger.querySelector('i');
-
-    burger.addEventListener('click', () => {
-      menu.classList.toggle('open');
-      burgerIcon.classList.toggle('fa-bars');
-      burgerIcon.classList.toggle('fa-xmark'); // آیکون ضربدر در FA6
-    });
-
-    // وقتی لینک کلیک شد → منو بسته شود و آیکون برگردد
-    document.querySelectorAll('#menu a').forEach(link => {
-      link.addEventListener('click', () => {
-        menu.classList.remove('open');
-        burgerIcon.classList.add('fa-bars');
-        burgerIcon.classList.remove('fa-xmark');
-      });
-    });
-
-    // Section reveal animation
-    const sections = document.querySelectorAll('section');
-    const io = new IntersectionObserver(entries=>{
-      entries.forEach(e=>{
-        if(e.isIntersecting){
-          e.target.style.transition='all .8s ease';
-          e.target.style.opacity=1;
-          e.target.style.transform='translateY(0)';
-          io.unobserve(e.target);
-        }
-      })
-    },{threshold:.12});
-    sections.forEach(s=>{
-      s.style.opacity=0; s.style.transform='translateY(40px)'; io.observe(s);
-    });
-  </script>
-</body>
-</html>
+     
